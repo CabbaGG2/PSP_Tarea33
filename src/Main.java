@@ -21,6 +21,8 @@ public class Main {
 
             if(response.statusCode() == 200){
                 System.out.println("La solicitud fue exitosa.");
+                System.out.println("Codigo: " + response.statusCode());
+                System.out.println("Cabecera: " + response.headers());
                 Files.writeString(Path.of("inspector.html"), response.body());
             } else {
                 System.out.println("La solicitud falló con el código de estado: " + response.statusCode());
